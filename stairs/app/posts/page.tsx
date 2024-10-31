@@ -92,10 +92,10 @@ const PostsPage = () => {
   );
 
   return (
-    <div>
+    <div className="flex flex-col items-center place-content-center bg-blue-500 bg-opacity-50">
       <h1 className="text-2xl font-bold">Posts</h1>
 
-      <div className="my-4">
+      <div className="my-4 w-11/12">
         <input
           type="text"
           placeholder="Filtrar por título"
@@ -120,7 +120,7 @@ const PostsPage = () => {
         />
       </div>
 
-      <ul className="space-y-4">
+      <ul className="space-y-4 w-11/12">
         {displayedPosts.map((post) => (
           <li key={post.id} className="border p-4 rounded">
             <h2 className="font-semibold">{post.title}</h2>

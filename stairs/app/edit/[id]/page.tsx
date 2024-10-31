@@ -82,10 +82,10 @@ export default function EditPage({ params } : { params : { id: string }}) {
     }
 
     return (
-        <div>
+        <div className="flex flex-col items-center place-content-center bg-blue-500 bg-opacity-50">
             <h2 className="text-2xl font-bold my-8">Edite o item</h2>
 
-            <form onSubmit={handleSubmit} className="flex gap-3 flex-col">
+            <form onSubmit={handleSubmit} className="flex gap-3 flex-col w-11/12 p-5">
                 <input 
                     type="text" 
                     name="name" 

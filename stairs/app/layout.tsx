@@ -29,12 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="max-w-6xl mx-auto mt-6 text-slate-800">
+        <div className="max-w-6xl mx-auto mt-6 text-black-800">
           <header className="p-6 border-b flex justify-around bg-red-500 rounded-tl-lg rounded-tr-lg text-2xl text-white font-bold">
             <Link href={'/'}>Itens</Link>
             <Link href={'/posts'}>Posts</Link>
           </header>
-          <main className="p-4 text-lg" >
+          <main className="text-lg" >
             {children}
           </main>
         </div>
