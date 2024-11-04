@@ -20,7 +20,7 @@ const PostsPage = () => {
         const response = await axios.get("https://jsonplaceholder.org/posts");
         const postsWithDate = response.data.map(post => ({
           ...post,
-          publishedAt: generateRandomDate(),
+          publishedAt: new Date(post.publishedAt).toLocaleDateString(),
           status: Math.random() > 0.5 ? "publicado" : "rascunho"
         }));
         setPosts(postsWithDate);
@@ -122,11 +122,15 @@ const PostsPage = () => {
 
       <ul className="space-y-4 w-11/12">
         {displayedPosts.map((post) => (
-          <li key={post.id} className="border p-4 rounded">
-            <h2 className="font-semibold">{post.title}</h2>
-            <p>Status: {post.status}</p>
-            <p>Data de Publicação: {new Date(post.publishedAt).toLocaleDateString()}</p>
-          </li>
+          <a key={post.id} href={`/posts/${post.id}`}>
+            <li className="border p-4 rounded">
+              <h2 className="font-semibold">{post.title}</h2>
+              <p>ID {post.id}</p>
+              <p>Status: {post.status}</p>
+              <p>Data de Publicação: {post.publishedAt}</p>
+            </li>
+          </a>
+          
         ))}
       </ul>
 
